@@ -1,8 +1,10 @@
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias ls="ls -l --color --group-directories-first"
+alias ls="ls --color --group-directories-first"
 alias sl="ls"
+alias ll="ls -l"
 alias la="ls -a"
 alias al="la"
+alias lla="ls -la"
 export WISEML=$HOME/Documents/lapti/wiseml
 alias back="cd $WISEML/jvwiseml"
 alias front="cd $WISEML/wisemlreact"
