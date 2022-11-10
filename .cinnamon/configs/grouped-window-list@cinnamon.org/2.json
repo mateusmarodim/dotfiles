@@ -168,8 +168,7 @@
             "discord.desktop",
             "spotify-launcher.desktop",
             "brave-browser.desktop",
-            "org.gnome.Terminal.desktop",
-            "codium.desktop"
+            "org.gnome.Terminal.desktop"
         ]
     },
     "group-apps": {

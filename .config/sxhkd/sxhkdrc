@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	gnome-terminal
+	alacritty
 
 # program launcher
 super + p
@@ -19,7 +19,7 @@ super + Escape
 #
 
 # quit/restart bspwm
-super + alt + {q,r}
+super + shift + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
@@ -67,7 +67,7 @@ super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
+super + ctrl + {h,l}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop

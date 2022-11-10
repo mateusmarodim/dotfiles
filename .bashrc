@@ -28,5 +28,4 @@ if [[ ! -a ~/.inputrc ]]; then
   echo '$include /etc/inputrc' > ~/.inputrc;
   echo 'set completion-ignore-case On' >> ~/.inputrc;
 fi
-
-neofetch
+pfetch
