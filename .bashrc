@@ -29,3 +29,5 @@ if [[ ! -a ~/.inputrc ]]; then
   echo 'set completion-ignore-case On' >> ~/.inputrc;
 fi
 pfetch
+synclient AreaLeftEdge=235
+synclient AreaTopEdge=235

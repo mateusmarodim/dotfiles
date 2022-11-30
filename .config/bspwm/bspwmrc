@@ -2,11 +2,22 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor eDP-1 -d 1 2 3 4
-bspc monitor HDMI-1-0 -d 5 6
+INTERNAL_MONITOR="eDP-1"
+EXTERNAL_MONITOR="HDMI-1-0"
+
+# on first load setup default workspaces
+if [[ "$1" = 0 ]]; then
+	if [[ $(xrandr -q | grep "${EXTERNAL_MONITOR} connected") ]]; then
+		bspc monitor "$EXTERNAL_MONITOR" -d 5 6
+		bspc monitor "$INTERNAL_MONITOR" -d 1 2 3 4
+		bspc wm -O "$EXTERNAL_MONITOR" "$INTERNAL_MONITOR"
+	else
+		bspc monitor "$INTERNAL_MONITOR" -d 1 2 3 4 5 6
+	fi
+fi
 
 bspc config border_width 1
-bspc config window_gap 5
+bspc config window_gap 10
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -21,3 +32,4 @@ bspc rule -a Screenkey manage=off
 $HOME/.config/polybar/launch.sh
 nitrogen --restore &
 picom --config $HOME/.config/picom/picom.conf &
+optimus-manager-qt
